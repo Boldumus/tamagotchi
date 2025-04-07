@@ -308,7 +308,7 @@ public class TamagotchiServerApplication {
 					oos.close();
 				} catch (FileNotFoundException e) {
 					
-					String defaultFile = "/src/main/resources/files/defaultFile.dat";
+					String defaultFile = "src/main/resources/files/defaultFile.dat";
 					System.out.println("Fichier introuvable, sérialisation de Tamagotchi dans le fichier :" + defaultFile);
 					
 					try {
