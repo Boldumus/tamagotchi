@@ -155,7 +155,10 @@ public class TamagotchiServerApplication {
 					System.exit(1);
 				}
 				break;
-
+			case "-h":
+				printHelp();
+				System.exit(0);
+				break;
 				// TODO Tâche 8 : Afficher le message d'aide dans le cas de la commande "-h".
 
 			default:
