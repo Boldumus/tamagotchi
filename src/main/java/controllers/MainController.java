@@ -50,14 +50,41 @@ public class MainController extends ControllerBase {
 	 * En cas de connexion réussie, la vue Tamagotchi est affichée.
 	 */
 	private void onConnectButtonClick() {
-		int port = -1;
+		int port = -1; // not sure
 		// TODO Tâche 5 : Implémenter le changement de la vue lors d'une connexion et gèrer la validation du numéro de port 
 		// Votre code doit utiliser la ligne ci-dessous:
 		//						super.setUpSocket(port);
 		//						App.showView("Tamagotchi");
 
+		String portText = mainView.getPortField().getText().trim();
+		
+		System.out.println(portText);
+		
+	    if (portText.isEmpty()) {
+	        port = Constants.DEFAULT_PORT;
+	    } else {
+	        try {
+	            port = Integer.parseInt(portText);
+	            if (port <= 0 || port > 66666) {
+	                throw new NumberFormatException();
+	            }
+	        } catch (NumberFormatException e) {
+	            showError("Invalid port number. Please enter a valid port number between 1 and 66666.");
+	            return;
+	        }
+	    }
 
+	    try {
+	        super.setUpSocket(port);
+
+	        App.showView("Tamagotchi");
+	        
+	    } catch (IOException e) {
+	    	e.printStackTrace();
+	        showError("Failed to connect to the server. Please try again.");
+	    }
 	}
+
 
 
 	/**

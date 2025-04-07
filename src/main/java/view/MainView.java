@@ -96,14 +96,27 @@ public class MainView extends ViewBase {
 	 */
 	@Override
 	protected void createUI() {
-
+		
+		//TODO Tâche 4 : Créer l'interface utilisateur de la première vue.
 
 		root = new VBox(10);
-		root.setPadding(new Insets(10));
+		
 
-		//TODO Tâche 4 : Créer l'interface utilisateur de la première vue.
-		// Votre code doit utiliser la ligne ci-dessous:
-		connectButton = new Button(Constants.BUTTON_CONNECT);
+        // Champ de texte pour saisir le numéro de port
+        portField = new TextField();
+        
+        Label portLabel = new Label("Enterez le numéro de port (par défaut 2025)");
+        
+        // Bouton de connexion
+        connectButton = new Button(Constants.BUTTON_CONNECT);
+
+        // Label pour afficher les messages d'erreur
+        errorLabel = new Label();       
+        errorLabel.setVisible(false);
+
+        // Ajouter les composants à la racine
+        root.getChildren().addAll(portLabel, portField, connectButton, errorLabel);
+
 
 	}
 }
