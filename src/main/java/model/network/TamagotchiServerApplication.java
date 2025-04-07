@@ -3,6 +3,7 @@ package model.network;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -200,6 +201,8 @@ public class TamagotchiServerApplication {
 			BufferedWriter bw = new BufferedWriter(new FileWriter( filePath));
 			bw.write(tm.toString());
 			
+			bw.close();
+			is.close();
 			// Appel de la methode réguliaire sur le fichier désérialisé
 			parseInitialValuesFromFile(filePath);
 			
@@ -296,9 +299,31 @@ public class TamagotchiServerApplication {
 		if (outputFile != null) {
 			Runtime.getRuntime().addShutdownHook(new Thread(() -> {
 				System.out.println("Arrêt du serveur... Sérialisation de Tamagotchi dans le fichier :" + outputFile);
+				
 
 				// TODO Tâche 3: Sérialiser l'objet Tamagotchi à l'arrêt du serveur.
-
+				try {
+					ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(outputFile));
+					oos.writeObject(tamagotchi);
+					oos.close();
+				} catch (FileNotFoundException e) {
+					
+					String defaultFile = "/src/main/resources/files/defaultFile.dat";
+					System.out.println("Fichier introuvable, sérialisation de Tamagotchi dans le fichier :" + defaultFile);
+					
+					try {
+						ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(defaultFile));
+						oos.writeObject(tamagotchi);
+						oos.close();
+						
+					} catch (IOException f) {
+						System.out.println("Impossible d'enregister au fichier par default.");
+						f.printStackTrace();
+					}
+				} catch (IOException e) {
+					
+					e.printStackTrace();
+				}
 			}));
 		}
 	}
