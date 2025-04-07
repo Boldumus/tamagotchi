@@ -75,14 +75,14 @@ public class MainController extends ControllerBase {
 	    }
 
 	    try {
-	        super.setUpSocket(port);      
+	        super.setUpSocket(port);
+	        
+	        App.showView("tamagotchi");
 	        
 	    } catch (IOException e) {
+	    	e.printStackTrace();
 	        showError("Failed to connect to the server. Please try again.");
 	    }
-	    
-	    App.showView("Tamagotchi");
-        System.out.println("hi");	 
 	}
 
 
