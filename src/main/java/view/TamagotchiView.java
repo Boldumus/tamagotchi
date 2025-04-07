@@ -185,9 +185,18 @@ public class TamagotchiView extends ViewBase {
 		settingButtonBox.setSpacing(10);
 
 		// TODO Tâche 7: Ajouter les boutons interactifs (Jouer, Nourrir, Punir, Ignorer, Juger et Quitter)
+		
+        playButton = new Button("Play");
+        feedButton = new Button("Feed");  
+        punishButton = new Button("Punish");  
+        ignoreButton = new Button("Ignore");
+        judgeButton = new Button("Judge");
+        exitButton = new Button("Exit");
+        
 
 
 		gameButtonBox.getChildren().addAll(playButton, feedButton, punishButton, ignoreButton, judgeButton);
+		
 		settingButtonBox.getChildren().add(exitButton);
 
 		rootPane.getChildren().addAll(notificationLabel, imageView, gameButtonBox, settingButtonBox);

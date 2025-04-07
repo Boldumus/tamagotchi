@@ -34,12 +34,20 @@ public class App extends Application {
 	public static void showView(String viewName) {
 		var view = ViewBase.getView(viewName);
 		Scene scene = new Scene(view.getRoot(), 640, 480);
-
+		
+		System.out.println("after scene");
+		
 		ControllerBase.getController(view);
+		
+		System.out.println("after getController(view)");
 
 		primaryStage.setScene(scene);
+		
+		System.out.println("after setScene(scene)");
+		
 		primaryStage.show();
-	}
+		
+		System.out.println("After show()");	}
 
 	public static void main(String[] args) {
 		launch();
