@@ -49,6 +49,11 @@ public class TamagotchiController extends ControllerBase {
 		this.tamagotchiView = (TamagotchiView) super.view;
 
 		//TODO Tâche 6 : Définir le comportement au clic pour chaque bouton dans la vue Tamagotchi.
+		this.tamagotchiView.getPlayButton().setOnAction(e -> play());
+	    this.tamagotchiView.getFeedButton().setOnAction(e -> feed());
+	    this.tamagotchiView.getPunishButton().setOnAction(e -> punish());
+	    this.tamagotchiView.getIgnoreButton().setOnAction(e -> ignore());
+	    this.tamagotchiView.getExitButton().setOnAction(e -> exit());
 
 		super.addEventHandler((Event event) -> {
 			handleServerEvent(event);
