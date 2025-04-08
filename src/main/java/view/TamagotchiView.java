@@ -186,12 +186,12 @@ public class TamagotchiView extends ViewBase {
 
 		// TODO Tâche 7: Ajouter les boutons interactifs (Jouer, Nourrir, Punir, Ignorer, Juger et Quitter)
 		
-        playButton = new Button("Play");
-        feedButton = new Button("Feed");  
-        punishButton = new Button("Punish");  
-        ignoreButton = new Button("Ignore");
-        judgeButton = new Button("Judge");
-        exitButton = new Button("Exit");
+        playButton = new Button("Jouer");
+        feedButton = new Button("Nourrir");  
+        punishButton = new Button("Punir");  
+        ignoreButton = new Button("Ignorer");
+        judgeButton = new Button("Critiquer");
+        exitButton = new Button("Quitter");
         
 
 
