@@ -53,6 +53,7 @@ public class TamagotchiController extends ControllerBase {
 	    this.tamagotchiView.getFeedButton().setOnAction(e -> feed());
 	    this.tamagotchiView.getPunishButton().setOnAction(e -> punish());
 	    this.tamagotchiView.getIgnoreButton().setOnAction(e -> ignore());
+	    this.tamagotchiView.getJudgeButton().setOnAction(e -> judge());
 	    this.tamagotchiView.getExitButton().setOnAction(e -> exit());
 
 		super.addEventHandler((Event event) -> {
