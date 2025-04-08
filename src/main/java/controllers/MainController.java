@@ -69,7 +69,7 @@ public class MainController extends ControllerBase {
 	                throw new NumberFormatException();
 	            }
 	        } catch (NumberFormatException e) {
-	            showError("Invalid port number. Please enter a valid port number between 1 and 66666.");
+	            showError("Numéro de port invalide. Veuillez entrer un numéro de port valide entre 1 et 66666.");
 	            return;
 	        }
 	    }
@@ -81,7 +81,7 @@ public class MainController extends ControllerBase {
 	        
 	    } catch (IOException e) {
 	    	e.printStackTrace();
-	        showError("Failed to connect to the server. Please try again.");
+	        showError("Échec de la connexion au serveur. Veuillez réessayer.");
 	    }
 	}
 

@@ -105,7 +105,7 @@ public class MainView extends ViewBase {
         // Champ de texte pour saisir le numéro de port
         portField = new TextField();
         
-        Label portLabel = new Label("Enterez le numéro de port (par défaut 2025)");
+        Label portLabel = new Label("Entrez le numéro de port (par défaut 2025)");
         
         // Bouton de connexion
         connectButton = new Button(Constants.BUTTON_CONNECT);
