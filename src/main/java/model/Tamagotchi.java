@@ -107,7 +107,7 @@ public class Tamagotchi implements Serializable {
 	 * @param increaseValue La valeur par laquelle l'émotion sera augmentée.
 	 */
 	public void increaseEmotionValue(EmotionType type, int increaseValue) {
-		// TODO Tâche 9 : Augmenter la valeur de l'émotion.
+		// Tâche 9 : Augmenter la valeur de l'émotion.
 		this.getEmotion(type).increaseValue(increaseValue);
 	}
 

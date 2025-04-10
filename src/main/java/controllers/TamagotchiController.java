@@ -48,7 +48,7 @@ public class TamagotchiController extends ControllerBase {
 	protected void initialize() {
 		this.tamagotchiView = (TamagotchiView) super.view;
 
-		//TODO Tâche 6 : Définir le comportement au clic pour chaque bouton dans la vue Tamagotchi.
+		// Tâche 6 : Définir le comportement au clic pour chaque bouton dans la vue Tamagotchi.
 		this.tamagotchiView.getPlayButton().setOnAction(e -> play());
 	    this.tamagotchiView.getFeedButton().setOnAction(e -> feed());
 	    this.tamagotchiView.getPunishButton().setOnAction(e -> punish());
@@ -134,7 +134,7 @@ public class TamagotchiController extends ControllerBase {
 	 * Action pour nourrir le Tamagotchi.
 	 */
 	private void feed() {
-		//TODO Tâche 0 : Gérer le changement d'état du Tamagotchi lors du clic sur le bouton de nourrissage via le serveur.
+		// Tâche 0 : Gérer le changement d'état du Tamagotchi lors du clic sur le bouton de nourrissage via le serveur.
 		try {
 			sendBehaviorToServer(new Feed());
 		} catch (IOException e) {

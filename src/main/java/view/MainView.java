@@ -97,7 +97,7 @@ public class MainView extends ViewBase {
 	@Override
 	protected void createUI() {
 		
-		//TODO Tâche 4 : Créer l'interface utilisateur de la première vue.
+		// Tâche 4 : Créer l'interface utilisateur de la première vue.
 
 		root = new VBox(10);
 		

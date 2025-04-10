@@ -51,11 +51,8 @@ public class MainController extends ControllerBase {
 	 */
 	private void onConnectButtonClick() {
 		int port = -1; // not sure
-		// TODO Tâche 5 : Implémenter le changement de la vue lors d'une connexion et gèrer la validation du numéro de port 
-		// Votre code doit utiliser la ligne ci-dessous:
-		//						super.setUpSocket(port);
-		//						App.showView("Tamagotchi");
-
+		// Tâche 5 : Implémenter le changement de la vue lors d'une connexion et gèrer la validation du numéro de port 
+		
 		String portText = mainView.getPortField().getText().trim();
 		
 		System.out.println(portText);
